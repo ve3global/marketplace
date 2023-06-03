@@ -1,8 +1,8 @@
 import dotenv from 'dotenv';
 dotenv.config();
 import ethers from 'ethers';
-import nftAbi from '../../artifacts/contracts/VE3NFT.sol/VE3NFT.json' assert { type: "json" };
-import marketplaceAbi from '../../artifacts/contracts/Marketplace.sol/Marketplace.json' assert { type: "json" };
+import nftAbi from '../../artifacts/contracts/VE3NFT.sol/VE3NFT.json';
+import marketplaceAbi from '../../artifacts/contracts/Marketplace.sol/Marketplace.json';
 const wsurl = process.env.WS_URL
 const wsProvider = new ethers.providers.WebSocketProvider(wsurl);
 const nftContractAddress =process.env.nftContractAddress;

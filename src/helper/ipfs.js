@@ -12,11 +12,13 @@ const ipfs = async () => {
 }
 const ipfsGet = async (ipfsHash) => {
     try {
-        const stream = IPFSNative.cat(ipfsHash)
+        const stream =await IPFSNative.cat(ipfsHash)
+        console.log(stream);
         let data = ''
         for await (const chunk of stream) {
             data += chunk.toString()
         }
+        console.log(JSON.parse(data))
         return JSON.parse(data)
     } catch (e) {
         console.log(e);
