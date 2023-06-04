@@ -5,7 +5,7 @@ const nft = express.Router();
 nft.get("/", listItemsOnSale); // list all items on sale
 nft.post("/:id", listItemsOnSaleSingle); // give detail of single nft on sale
 nft.post("/:id", getSingleNftDetails); // give details of my single nft
-nft.get("/", getNftDetails); // listing nft on my dashboard
+nft.get("/collections", getNftDetails);// listing nft on my dashboard
 
 
 

@@ -53,13 +53,13 @@ const getSingleNftDetails = async (req, res) => {
     else {
         return res.status(500).send({
             success: false,
-            message: "NFT doesnot exists"
+            message: "Single NFT doesnot exists"
         });
     }
 
 }
 const getNftDetails = async (req, res) => {
-    const detail = await nftCreate.findOne()
+    const detail = await nftCreate.find()
     if (detail.length > 0) {
         return res.status(200).json({
             success: true,

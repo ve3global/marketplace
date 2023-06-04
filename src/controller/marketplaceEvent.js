@@ -5,18 +5,19 @@ import nftBought from '../models/nftBought.js';
 const tokenOnSale = async () => {
     marketplaceContract.on("tokenOnSale", async (itemId, tokenId, nftContract, owner, seller, royalOwner, price, amount) => {
         const userRoyalOwner = await userModel.findOne({ address: royalOwner })
-        const userSeller = await userModel.findOne({ address: seller })
-        const userOwner = await userModel.findOne({ address: owner });
+        // const userSeller = await userModel.findOne({ address: seller })
+        // const userOwner = await userModel.findOne({ address: owner });
         await nftOnSale.create({
             itemId: itemId,
             tokenId: tokenId,
             nftContract: nftContract,
-            owner: userOwner._id,
-            seller: userSeller._id,
+            owner: owner,//userOwner._id,
+            seller: seller,//userSeller._id,
             royalOwner: userRoyalOwner._id,
             price: price,
             amount: amount
         })
+        console.log(itemId.toString());
     })
 }
 const tokenBought = async () => {

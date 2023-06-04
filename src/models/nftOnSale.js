@@ -11,12 +11,10 @@ const onSaleSchema = new mongoose.Schema({
         type: String
     },
     owner: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "user"
+        type:String
     },
     seller: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "user"
+        type:String
     },
     royalOwner: {
         type: mongoose.Schema.Types.ObjectId,
